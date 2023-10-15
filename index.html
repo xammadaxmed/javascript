@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="studentListContainer">
+        <h2>Student List</h2>
+        <button type="button" id="btnLoad">Load Data</button>
+
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: center;" >
+            <thead style="background-color: blue; color: white; font-size: 24px; font-weight: 999;">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Reg No</th>
+                    <th>Age</th>
+                    <th>Class</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+
+
+
+    <script>
+        var students = [
+            { id: 1, name: "Hammad Ahmed", regNo: "bfd1123243", class: "12th", age: 18, subjects: ["Math", "English"] },
+            { id: 2, name: "Saad Ahmed", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 3, name: "Saad Ahmed1", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 4, name: "Saad Ahmed2", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 5, name: "Saad Ahmed3", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 6, name: "Saad Ahmed4", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 7, name: "Saad Ahmed5", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 8, name: "Saad Ahmed6", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 9, name: "Saad Ahmed7", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 10, name: "Saad Ahme8d", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] },
+            { id: 11, name: "Saad Ahmed89", regNo: "ddre4454", class: "11th", age: 18, subjects: ["Urdu", "Physics"] }
+        ];
+
+        const studentListContainer = document.getElementById("tableBody");
+        var tableBody = ``;
+
+
+        students.forEach(function (student) {
+            tableBody += `
+                 <tr>
+                    <td>${student.id}</td>
+                    <td>${student.name}</td>
+                    <td>${student.regNo}</td>
+                    <td>${student.age}</td>
+                    <td>${student.class}</td>
+                </tr>
+            `;
+        });
+
+
+
+        const btnLoad = document.getElementById("btnLoad");
+        btnLoad.onclick = function(){
+             studentListContainer.innerHTML = tableBody;
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
